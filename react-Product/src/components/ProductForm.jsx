@@ -1,6 +1,6 @@
 import CustomInput from "./CustomInput"
 
-export default function ProductForm({ onSubmit, register, errors }) {
+export default function ProductForm({ onSubmit, register, errors, isEditing, onCancel }) {
     return (
         <form onSubmit={onSubmit}>
             <CustomInput 
@@ -27,7 +27,23 @@ export default function ProductForm({ onSubmit, register, errors }) {
                 error={errors.describeProduct}
             />
 
-            <button type="submit" className="btn btn-outline-primary">Thêm sản phẩm</button>
+            <div>
+                <button 
+                    type="submit" 
+                    className="btn btn-outline-primary"
+                >
+                    {isEditing ? "Lưu thay đổi" : "Thêm mới sản phẩm"}
+                </button>
+
+                {isEditing && (
+                    <button
+                        type="button"
+                        className="btn btn-outline-secondary"
+                    >
+                        Hủy
+                    </button>
+                )}
+            </div>
         </form>
     )
 }
