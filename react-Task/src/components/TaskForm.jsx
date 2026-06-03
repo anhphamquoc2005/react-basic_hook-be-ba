@@ -24,7 +24,7 @@ export default function TaskForm({ onSubmit, register, errors, isEditing, onCanc
                 type="text"
                 name="describe"
                 register={register}
-                error={errors.describ}
+                error={errors.describe}
             />
 
             <div>
